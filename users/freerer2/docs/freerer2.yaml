@@ -37,7 +37,7 @@ layers:
   - M
   - ','
   - .
-  - /
+  - {t: /, h: MOUSE}
   - {t: ESC, h: DEBUG}
   - {t: SPC, h: NAV}
   - {t: TAB, h: FUN}
