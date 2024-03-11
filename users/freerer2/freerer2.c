@@ -1,6 +1,26 @@
 #include QMK_KEYBOARD_H
 #include "freerer2.h"
 
+typedef enum {
+    TD_NONE,
+    TD_UNKNOWN,
+    TD_SINGLE_TAP,
+    TD_SINGLE_HOLD,
+} td_state_t;
+
+typedef struct {
+    bool is_press_action;
+    td_state_t state;
+} td_tap_t;
+
+td_state_t cur_dance(tap_dance_state_t *state) {
+    if (state->count == 1) {
+        if (!state->pressed) {return TD_SINGLE_TAP;}
+        else return TD_SINGLE_HOLD;
+    }
+    else return TD_UNKNOWN;
+}
+
 // 유저키코드 추가
 enum my_keycodes {
 ECLIPSE,
@@ -33,24 +53,25 @@ LAYER_LIST
 #undef LAYER_X
 };
 
-// 더블탭레이어 함수 추가 
+// 더블탭레이어 키코드 추가 
 enum {
     U_TD_BOOT,
-#define LAYER_X(LAYER, STRING) U_TD_U_##LAYER,
+    U_TD_COMM_SCRL,
+#define LAYER_X(LAYER, STRING) U_TD_##LAYER,
 LAYER_LIST
 #undef LAYER_X
 };
 
-// 레이어
+// 레이어 정의
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define LAYER_X(LAYER, STRING) [U_##LAYER] = U_LAYER_VA_ARGS(MAPPING, LAYER_##LAYER),
 LAYER_LIST
 #undef LAYER_X
 };
 
-// 더블탭레이어 함수
+// 더블탭 레이어 함수
 #define LAYER_X(LAYER, STRING) \
-void u_td_fn_U_##LAYER(tap_dance_state_t *state, void *user_data) { \
+void u_td_fn_##LAYER(tap_dance_state_t *state, void *user_data) { \
   if (state->count == 2) { \
     default_layer_set((layer_state_t)1 << U_##LAYER); \
   } \
@@ -58,17 +79,49 @@ void u_td_fn_U_##LAYER(tap_dance_state_t *state, void *user_data) { \
 LAYER_LIST
 #undef LAYER_X
 
-// 키보드 리부트 함수 추가
+// 더블탭 실행함수
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
   if (state->count == 2) {
     reset_keyboard();
   }
+};
+
+static td_tap_t drg_tap_state = { .is_press_action = true, .state = TD_NONE};
+void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
+	drg_tap_state.state = cur_dance(state);
+  	switch (drg_tap_state.state) {
+		case TD_SINGLE_TAP:
+			register_code(KC_SLSH);
+			break;
+		case TD_SINGLE_HOLD:
+			charybdis_set_pointer_dragscroll_enabled(true);
+			layer_on(U_MOUSE);
+			break;
+		default:
+			break;
+    }
 }
 
-// 더블탬 레이어 함수 실핼 액션 추가
+void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
+  	switch (drg_tap_state.state) {
+		case TD_SINGLE_TAP:
+			unregister_code(KC_SLSH);
+			break;
+		case TD_SINGLE_HOLD:
+			charybdis_set_pointer_dragscroll_enabled(false);
+			layer_off(U_MOUSE);
+			break;
+		default:
+			break;
+    }
+	drg_tap_state.state = TD_NONE;
+}
+
+// 더블탭 실행 액션 추가
 tap_dance_action_t tap_dance_actions[] = {
     [U_TD_BOOT] = ACTION_TAP_DANCE_FN(u_td_fn_boot),
-#define LAYER_X(LAYER, STRING) [U_TD_U_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_U_##LAYER),
+    [U_TD_COMM_SCRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, u_td_fn_drgscrl_finish, u_td_fn_drgscrl_reset),
+#define LAYER_X(LAYER, STRING) [U_TD_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_##LAYER),
 LAYER_LIST
 #undef LAYER_X
 };
