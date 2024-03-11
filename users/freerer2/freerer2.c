@@ -69,7 +69,7 @@ LAYER_LIST
 #undef LAYER_X
 };
 
-// 더블탭레이어 함수
+// 더블탭 레이어 함수
 #define LAYER_X(LAYER, STRING) \
 void u_td_fn_##LAYER(tap_dance_state_t *state, void *user_data) { \
   if (state->count == 2) { \
@@ -79,7 +79,7 @@ void u_td_fn_##LAYER(tap_dance_state_t *state, void *user_data) { \
 LAYER_LIST
 #undef LAYER_X
 
-// 더블탭 함수 실행 액션 추가
+// 더블탭 실행함수
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
   if (state->count == 2) {
     reset_keyboard();
@@ -117,7 +117,7 @@ void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
 	drg_tap_state.state = TD_NONE;
 }
 
-// 더블탭 레이어 함수 실행 액션 추가
+// 더블탭 실행 액션 추가
 tap_dance_action_t tap_dance_actions[] = {
     [U_TD_BOOT] = ACTION_TAP_DANCE_FN(u_td_fn_boot),
     [U_TD_COMM_SCRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, u_td_fn_drgscrl_finish, u_td_fn_drgscrl_reset),
