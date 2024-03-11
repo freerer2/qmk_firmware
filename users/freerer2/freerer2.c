@@ -8,11 +8,6 @@ typedef enum {
     TD_SINGLE_HOLD,
 } td_state_t;
 
-typedef struct {
-    bool is_press_action;
-    td_state_t state;
-} td_tap_t;
-
 td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
         if (!state->pressed) {return TD_SINGLE_TAP;}
@@ -86,10 +81,10 @@ void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
   }
 };
 
-static td_tap_t drg_tap_state = { .is_press_action = true, .state = TD_NONE};
+static td_state_t drg_state;
 void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
-	drg_tap_state.state = cur_dance(state);
-  	switch (drg_tap_state.state) {
+	drg_state = cur_dance(state);
+  	switch (drg_state) {
 		case TD_SINGLE_TAP:
 			register_code(KC_SLSH);
 			break;
@@ -103,7 +98,7 @@ void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
 }
 
 void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
-  	switch (drg_tap_state.state) {
+  	switch (drg_state) {
 		case TD_SINGLE_TAP:
 			unregister_code(KC_SLSH);
 			break;
@@ -114,7 +109,7 @@ void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
 		default:
 			break;
     }
-	drg_tap_state.state = TD_NONE;
+	drg_state = TD_NONE;
 }
 
 // 더블탭 실행 액션 추가
