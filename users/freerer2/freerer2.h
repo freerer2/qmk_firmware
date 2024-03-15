@@ -54,7 +54,6 @@ LAYER_X(NUM,	"Num") \
 LAYER_X(FUN,	"Fun") \
 LAYER_X(SYM,	"Sym") \
 LAYER_X(MOUSE,	"Mouse") \
-LAYER_X(WHEEL,	"Wheel") \
 LAYER_X(DEBUG,	"Debug")
 
 
