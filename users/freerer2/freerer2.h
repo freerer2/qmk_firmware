@@ -139,14 +139,14 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	#define LAYER_MOUSE \
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				DPI_MOD,			U_WINFLT,			U_WINUP,			U_WINFRT,			S_D_MOD,			\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			KC_NO,				U_WINLT,			U_WINDN,			U_WINRT,			KC_NO,				\
-	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				SNIPING,			SNIPING,			SNIPING,			SNIPING,			SNIPING,			\
-											KC_BTN2,			KC_BTN1,			DRGSCRL,			DRGSCRL,			KC_BTN1,			KC_DEL
+	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				KC_NO,				KC_BTN4,			KC_BTN5,			SNIPING,			KC_NO,				\
+											KC_BTN2,			KC_BTN1,			DRGSCRL,			DRGSCRL,			KC_BTN1,			KC_BTN2
 #else
 	#define LAYER_MOUSE \
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				KC_NO,				KC_MS_U,			KC_NO,				KC_NO,				\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			KC_NO,				KC_MS_L,			KC_MS_D,			KC_MS_R,			KC_NO,				\
-	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
-											KC_BTN2,			KC_BTN1,			LT(U_WHEEL,KC_BTN3),LT(U_WHEEL,KC_BTN3),KC_BTN1,			KC_DEL
+	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				KC_NO,				KC_BTN4,			KC_BTN5,			KC_NO,				KC_NO,				\
+											KC_BTN2,			KC_BTN1,			LT(U_WHEEL,KC_BTN3),LT(U_WHEEL,KC_BTN3),KC_BTN1,			KC_BTN2
 #endif // POINTING_DEVICE_ENABLE
 
 #define LAYER_WHEEL \
