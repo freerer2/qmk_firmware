@@ -89,7 +89,9 @@ void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
 			register_code(KC_SLSH);
 			break;
 		case TD_SINGLE_HOLD:
+			#ifdef POINTING_DEVICE_ENABLE
 			charybdis_set_pointer_dragscroll_enabled(true);
+			#endif
 			layer_on(U_MOUSE);
 			break;
 		default:
@@ -103,7 +105,9 @@ void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
 			unregister_code(KC_SLSH);
 			break;
 		case TD_SINGLE_HOLD:
+			#ifdef POINTING_DEVICE_ENABLE
 			charybdis_set_pointer_dragscroll_enabled(false);
+			#endif
 			layer_off(U_MOUSE);
 			break;
 		default:
