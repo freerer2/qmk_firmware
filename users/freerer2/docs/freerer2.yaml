@@ -208,21 +208,21 @@ layers:
   - LCTL
   - LSFT
   - C(H)
-  - ''
+  - LEFT DESK
   - G(LEFT)
   - G(DOWN)
   - G(RIGHT)
-  - ''
+  - RIGHT DESK
   - {type: held}
   - C(X)
   - C(C)
   - C(V)
   - ''
+  - NEW DESK
+  - KC_BTN4
+  - KC_BTN5
   - SNIPING
-  - SNIPING
-  - SNIPING
-  - SNIPING
-  - SNIPING
+  - DEL DESK
   - 'KC_BTN2'
   - 'KC_BTN1'
   - 'DRGSCRL'
@@ -236,30 +236,30 @@ layers:
   - C(S(R))
   - C(Y)
   - ''
-  - ''
+  - G(S(LEFT))
   - MS_UP
-  - ''
+  - G(S(RIGHT))
   - ''
   - LGUI
   - LALT
   - LCTL
   - LSFT
   - C(H)
-  - ''
+  - LEFT DESK
   - MS_LEFT
   - MS_DOWN
   - MS_RIGHT
-  - ''
+  - RIGHT DESK
   - {type: held}
   - C(X)
   - C(C)
   - C(V)
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - NEW DESK
+  - KC_BTN4
+  - KC_BTN5
+  - SNIPING
+  - DEL DESK
   - 'KC_BTN2'
   - 'KC_BTN1'
   - {t: 'KC_BTN3', h: WHEEL}
