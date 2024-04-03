@@ -92,7 +92,7 @@ LAYER_X(DEBUG,	"Debug")
 	KC_COLN,			KC_DLR,				KC_PERC,			KC_CIRC,			KC_EQL,				KC_NO,				KC_LSFT,			KC_LCTL,			KC_LALT,			KC_LGUI,			\
 	KC_QUES,			KC_EXLM,			KC_AT,				KC_HASH,			KC_PIPE,			KC_NO,				DF(U_SYM),			DF(U_FUN),			KC_ALGR,			KC_NO,				\
 											KC_TILD,			KC_RPRN,			KC_UNDS,			KC_NO,				KC_NO,				KC_NO
- #else
+#else
 
 	#define OVERRIDE_LIST \
 	OVERRIDE_X(WINLT,	MOD_MASK_SHIFT, 	U_WINLT, 	U_WINFLT) \
@@ -148,11 +148,11 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				DPI_MOD,			U_WINFLT,			U_WINUP,			U_WINFRT,			S_D_MOD,			\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			U_WINLT,			U_WINDN,			U_WINRT,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			SNIPING,			U_DEL_DSKT,			\
-											KC_BTN2,			KC_BTN1,			DRGSCRL,			DRGSCRL,			KC_BTN1,			KC_BTN2
+											DRGSCRL,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			DRGSCRL
 #else
 	#define LAYER_MOUSE \
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			KC_MS_L,			KC_MS_D,			KC_MS_R,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
-											KC_BTN2,			KC_BTN1,			KC_BTN3,			KC_BTN3,			KC_BTN1,			KC_BTN2
+											KC_BTN3,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE

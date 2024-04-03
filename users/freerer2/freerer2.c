@@ -18,33 +18,33 @@ td_state_t cur_dance(tap_dance_state_t *state) {
 
 // 유저키코드 추가
 enum my_keycodes {
-ECLIPSE,
-BROWSER = SAFE_RANGE,
-NEXACRO,
-STEP_INTO,
-STEP_OVER,
-STEP_OUT,
-RESUME,
+	ECLIPSE,
+	BROWSER = SAFE_RANGE,
+	NEXACRO,
+	STEP_INTO,
+	STEP_OVER,
+	STEP_OUT,
+	RESUME,
 };
 
 // 콤보추가
 enum combos {
 #define COMBO_X(NAME, COMBOS, ...) NAME,
-COMBO_LIST
+	COMBO_LIST
 #undef COMBO_X
 };
 
 // 오버라이드 추가
 enum shifts {
 #define OVERRIDE_X(NAME, MOD, ORI, CHG) NAME,
-OVERRIDE_LIST
+	OVERRIDE_LIST
 #undef OVERRIDE_X
 };
 
 // 레이어추가
 enum layers {
 #define LAYER_X(LAYER, STRING) U_##LAYER,
-LAYER_LIST
+	LAYER_LIST
 #undef LAYER_X
 };
 
@@ -53,44 +53,44 @@ enum {
     U_TD_BOOT,
     U_TD_COMM_SCRL,
 #define LAYER_X(LAYER, STRING) U_TD_##LAYER,
-LAYER_LIST
+	LAYER_LIST
 #undef LAYER_X
 };
 
 // 레이어 정의
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define LAYER_X(LAYER, STRING) [U_##LAYER] = U_LAYER_VA_ARGS(MAPPING, LAYER_##LAYER),
-LAYER_LIST
+	LAYER_LIST
 #undef LAYER_X
 };
 
 // 더블탭 레이어 함수
 #define LAYER_X(LAYER, STRING) \
-void u_td_fn_##LAYER(tap_dance_state_t *state, void *user_data) { \
-  if (state->count == 2) { \
-    default_layer_set((layer_state_t)1 << U_##LAYER); \
-  } \
-}
-LAYER_LIST
+	void u_td_fn_##LAYER(tap_dance_state_t *state, void *user_data) { \
+		if (state->count == 2) { \
+			default_layer_set((layer_state_t)1 << U_##LAYER); \
+		} \
+	}
+	LAYER_LIST
 #undef LAYER_X
 
 // 더블탭 실행함수
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
-  if (state->count == 2) {
-    reset_keyboard();
-  }
+	if (state->count == 2) {
+    	reset_keyboard();
+	}
 };
 
 static td_state_t drg_state;
 void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
 	drg_state = cur_dance(state);
-  	switch (drg_state) {
+	switch (drg_state) {
 		case TD_SINGLE_TAP:
 			register_code(KC_SLSH);
 			break;
 		case TD_SINGLE_HOLD:
 			#ifdef POINTING_DEVICE_ENABLE
-			charybdis_set_pointer_dragscroll_enabled(true);
+				charybdis_set_pointer_dragscroll_enabled(true);
 			#endif
 			layer_on(U_MOUSE);
 			break;
@@ -100,7 +100,7 @@ void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
 }
 
 void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
-  	switch (drg_state) {
+	switch (drg_state) {
 		case TD_SINGLE_TAP:
 			unregister_code(KC_SLSH);
 			break;
@@ -127,23 +127,23 @@ LAYER_LIST
 
 // 콤보
 #define COMBO_X(NAME, COMBOS, ...) const uint16_t PROGMEM COMBO_##NAME[] = {__VA_ARGS__, COMBO_END};
-COMBO_LIST
+	COMBO_LIST
 #undef COMBO_X
 
 combo_t key_combos[] = {
 #define COMBO_X(NAME, COMBOS, ...) [NAME] = COMBO(COMBO_##NAME, COMBOS),
-COMBO_LIST
+	COMBO_LIST
 #undef COMBO_X
 };
 
 //오버라이드
 #define OVERRIDE_X(NAME, MOD, ORI, CHG) const key_override_t OVERRIDE_##NAME = ko_make_basic(MOD, ORI, CHG);
-OVERRIDE_LIST
+	OVERRIDE_LIST
 #undef OVERRIDE_X
 
 const key_override_t **key_overrides = (const key_override_t *[]){
 #define OVERRIDE_X(NAME, MOD, ORI, CHG) &OVERRIDE_##NAME,
-OVERRIDE_LIST
+	OVERRIDE_LIST
 #undef OVERRIDE_X
 NULL
 };
@@ -156,7 +156,7 @@ static bool is_nexaro = false;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 		
-      case ECLIPSE:
+	case ECLIPSE:
 		if (record->event.pressed) {
 			is_eclipse = true;
 			is_browser = false;
@@ -164,7 +164,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case BROWSER:
+	case BROWSER:
 		if (record->event.pressed) {
 			is_eclipse = false;
 			is_browser = true;
@@ -172,7 +172,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case NEXACRO:
+	case NEXACRO:
 		if (record->event.pressed) {
 			is_eclipse = false;
 			is_browser = false;
@@ -180,7 +180,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case STEP_INTO:
+    case STEP_INTO:
 		if(is_eclipse){
 			if (record->event.pressed) {
 				register_code(KC_F5);
@@ -196,7 +196,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case STEP_OVER:
+    case STEP_OVER:
 		if(is_eclipse){
 			if (record->event.pressed) {
 				register_code(KC_F6);
@@ -212,7 +212,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case STEP_OUT:
+    case STEP_OUT:
 		if(is_eclipse){
 			if (record->event.pressed) {
 				register_code(KC_F7);
@@ -230,7 +230,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 		}
 		return false;
 		
-      case RESUME:
+    case RESUME:
 		if(is_eclipse || is_browser){
 			if (record->event.pressed) {
 				register_code(KC_F8);
