@@ -40,8 +40,8 @@
 
 
 # doubleB
-# qmk compile -kb bastardkb/skeletyl/blackpill -km freerer2 -e DOUBLE_B=yes
-# qmk compile -kb bastardkb/charybdis/3x5/blackpill -km freerer2 -e DOUBLE_B=yes
+# qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones -e DOUBLE_B=yes
+# qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones -e DOUBLE_B=yes
 ifeq ($(strip $(DOUBLE_B)),yes)
   OPT_DEFS += -DOUBLE_B
 endif

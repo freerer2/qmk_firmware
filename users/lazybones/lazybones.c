@@ -1,18 +1,20 @@
 #include QMK_KEYBOARD_H
-#include "freerer2.h"
+#include "lazybones.h"
 
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,
     TD_SINGLE_TAP,
     TD_SINGLE_HOLD,
+	TD_DOUBLE_TAP,
+	TD_DOUBLE_HOLD,
 } td_state_t;
 
 td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
         if (!state->pressed) {return TD_SINGLE_TAP;}
         else return TD_SINGLE_HOLD;
-    }
+    } else if (state->count == 2) return TD_DOUBLE_TAP;
     else return TD_UNKNOWN;
 }
 
@@ -29,39 +31,40 @@ enum my_keycodes {
 
 // 콤보추가
 enum combos {
-#define COMBO_X(NAME, COMBOS, ...) NAME,
-	COMBO_LIST
-#undef COMBO_X
+	#define COMBO_X(NAME, COMBOS, ...) NAME,
+		COMBO_LIST
+	#undef COMBO_X
 };
 
 // 오버라이드 추가
 enum shifts {
-#define OVERRIDE_X(NAME, MOD, ORI, CHG) NAME,
-	OVERRIDE_LIST
-#undef OVERRIDE_X
+	#define OVERRIDE_X(NAME, MOD, ORI, CHG) NAME,
+		OVERRIDE_LIST
+	#undef OVERRIDE_X
 };
 
 // 레이어추가
 enum layers {
-#define LAYER_X(LAYER, STRING) U_##LAYER,
-	LAYER_LIST
-#undef LAYER_X
+	#define LAYER_X(LAYER, STRING) U_##LAYER,
+		LAYER_LIST
+	#undef LAYER_X
 };
 
 // 더블탭레이어 키코드 추가 
 enum {
     U_TD_BOOT,
     U_TD_COMM_SCRL,
-#define LAYER_X(LAYER, STRING) U_TD_##LAYER,
-	LAYER_LIST
-#undef LAYER_X
+    U_TD_BTN2_SCRL,
+	#define LAYER_X(LAYER, STRING) U_TD_##LAYER,
+		LAYER_LIST
+	#undef LAYER_X
 };
 
 // 레이어 정의
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-#define LAYER_X(LAYER, STRING) [U_##LAYER] = U_LAYER_VA_ARGS(MAPPING, LAYER_##LAYER),
-	LAYER_LIST
-#undef LAYER_X
+	#define LAYER_X(LAYER, STRING) [U_##LAYER] = U_LAYER_VA_ARGS(MAPPING, LAYER_##LAYER),
+		LAYER_LIST
+	#undef LAYER_X
 };
 
 // 더블탭 레이어 함수
@@ -77,12 +80,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // 더블탭 실행함수
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
 	if (state->count == 2) {
-    	reset_keyboard();
+		reset_keyboard();
 	}
 };
 
 static td_state_t drg_state;
-void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
+void u_td_fn_commscrl_finish(tap_dance_state_t *state, void *user_data) {
 	drg_state = cur_dance(state);
 	switch (drg_state) {
 		case TD_SINGLE_TAP:
@@ -94,22 +97,67 @@ void u_td_fn_drgscrl_finish(tap_dance_state_t *state, void *user_data) {
 			#endif
 			layer_on(U_MOUSE);
 			break;
+		case TD_DOUBLE_TAP:
+			tap_code(KC_SLSH);
+			tap_code(KC_SLSH);
 		default:
 			break;
     }
 }
 
-void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
+void u_td_fn_commscrl_reset(tap_dance_state_t *state, void *user_data) {
 	switch (drg_state) {
 		case TD_SINGLE_TAP:
 			unregister_code(KC_SLSH);
 			break;
 		case TD_SINGLE_HOLD:
 			#ifdef POINTING_DEVICE_ENABLE
-			charybdis_set_pointer_dragscroll_enabled(false);
+				charybdis_set_pointer_dragscroll_enabled(false);
 			#endif
 			layer_off(U_MOUSE);
 			break;
+		case TD_DOUBLE_TAP:
+		default:
+			break;
+    }
+	drg_state = TD_NONE;
+}
+
+void u_td_fn_btn2scrl_finish(tap_dance_state_t *state, void *user_data) {
+	drg_state = cur_dance(state);
+	switch (drg_state) {
+		case TD_SINGLE_TAP:
+			register_code(KC_BTN2);
+			break;
+		case TD_SINGLE_HOLD:
+			#ifdef POINTING_DEVICE_ENABLE
+				charybdis_set_pointer_dragscroll_enabled(true);
+			#endif
+			break;
+		case TD_DOUBLE_TAP:
+			#ifndef POINTING_DEVICE_ENABLE
+				register_code(KC_BTN3);
+			#endif
+			break;
+		default:
+			break;
+    }
+}
+
+void u_td_fn_btn2scrl_reset(tap_dance_state_t *state, void *user_data) {
+	switch (drg_state) {
+		case TD_SINGLE_TAP:
+			unregister_code(KC_BTN2);
+			break;
+		case TD_SINGLE_HOLD:
+			#ifdef POINTING_DEVICE_ENABLE
+				charybdis_set_pointer_dragscroll_enabled(false);
+			#endif
+			break;
+		case TD_DOUBLE_TAP:
+			#ifndef POINTING_DEVICE_ENABLE
+				unregister_code(KC_BTN3);
+			#endif
 		default:
 			break;
     }
@@ -119,10 +167,11 @@ void u_td_fn_drgscrl_reset(tap_dance_state_t *state, void *user_data) {
 // 더블탭 실행 액션 추가
 tap_dance_action_t tap_dance_actions[] = {
     [U_TD_BOOT] = ACTION_TAP_DANCE_FN(u_td_fn_boot),
-    [U_TD_COMM_SCRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, u_td_fn_drgscrl_finish, u_td_fn_drgscrl_reset),
-#define LAYER_X(LAYER, STRING) [U_TD_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_##LAYER),
-LAYER_LIST
-#undef LAYER_X
+    [U_TD_COMM_SCRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, u_td_fn_commscrl_finish, u_td_fn_commscrl_reset),
+    [U_TD_BTN2_SCRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, u_td_fn_btn2scrl_finish, u_td_fn_btn2scrl_reset),
+	#define LAYER_X(LAYER, STRING) [U_TD_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_##LAYER),
+	LAYER_LIST
+	#undef LAYER_X
 };
 
 // 콤보

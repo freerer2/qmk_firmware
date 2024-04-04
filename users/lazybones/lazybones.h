@@ -1,4 +1,4 @@
-//qmk c2json -kb bastardkb/skeletyl/blackpill -km freerer2 /c/Users/[username]/qmk_firmware/users/freerer2/freerer2.c > /c/Users/[username]/qmk_firmware/users/freerer2/docs/freerer2.json
+//qmk c2json -kb bastardkb/skeletyl/blackpill -km lazybones /c/Users/[username]/qmk_firmware/users/lazybones/lazybones.c > /c/Users/[username]/qmk_firmware/users/lazybones/docs/lazybones.json
 #pragma once
 
 #define U_UND C(KC_Z)
@@ -37,7 +37,7 @@
 
 #define U_LAYER_VA_ARGS(mapping, ...) mapping(__VA_ARGS__)
 
-#define MAPPING LAYOUT_freerer2
+#define MAPPING LAYOUT_lazybones
 
 #define COMBO_LIST \
 COMBO_X(left_thumb,		KC_ESC,		LT(U_NAV,KC_SPC),	LT(U_FUN,KC_TAB)) \
@@ -107,7 +107,7 @@ LAYER_X(DEBUG,	"Debug")
 	#define LAYER_BASE \
 	KC_Q,				KC_W,				KC_E,				KC_R,				KC_T,				KC_Y,				KC_U,				KC_I,				KC_O,				KC_P,				\
 	LGUI_T(KC_A),		LALT_T(KC_S),		LCTL_T(KC_D),		LSFT_T(KC_F),		KC_G,				KC_H,				LSFT_T(KC_J),		LCTL_T(KC_K),		LALT_T(KC_L),		LGUI_T(KC_QUOT),	\
-	LT(U_MOUSE,KC_Z),	KC_X,				KC_C,				KC_V,				KC_B,				KC_N,				KC_M,				KC_COMM,			KC_DOT,				TD(U_TD_COMM_SCRL),\
+	LT(U_MOUSE,KC_Z),	KC_X,				KC_C,				KC_V,				KC_B,				KC_N,				KC_M,				KC_COMM,			KC_DOT,				TD(U_TD_COMM_SCRL),	\
 											LT(U_DEBUG,KC_ESC),	LT(U_NAV,KC_SPC),	LT(U_FUN,KC_TAB),	LT(U_SYM,KC_ENT),	LT(U_NUM,KC_BSPC),	KC_DEL
 
 	#define LAYER_NUM \
@@ -148,11 +148,11 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				DPI_MOD,			U_WINFLT,			U_WINUP,			U_WINFRT,			S_D_MOD,			\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			U_WINLT,			U_WINDN,			U_WINRT,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			SNIPING,			U_DEL_DSKT,			\
-											DRGSCRL,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			DRGSCRL
+											KC_NO,				KC_BTN1,			TD(U_TD_BTN2_SCRL),	TD(U_TD_BTN2_SCRL),	KC_BTN1,			KC_NO
 #else
 	#define LAYER_MOUSE \
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			KC_MS_L,			KC_MS_D,			KC_MS_R,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
-											KC_BTN3,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			KC_BTN3
+											KC_NO,				KC_BTN1,			TD(U_TD_BTN2_SCRL),	TD(U_TD_BTN2_SCRL),	KC_BTN1,			KC_NO
 #endif // POINTING_DEVICE_ENABLE

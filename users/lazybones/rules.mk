@@ -7,8 +7,8 @@ KEY_OVERRIDE_ENABLE = yes
 COMBO_ENABLE = yes
 CONSOLE_ENABLE = no
 
-INTROSPECTION_KEYMAP_C = freerer2.c # keymaps
+INTROSPECTION_KEYMAP_C = lazybones.c # keymaps
 
-include users/freerer2/custom_rules.mk
+include users/lazybones/custom_rules.mk
 
-include users/freerer2/post_rules.mk
+include users/lazybones/post_rules.mk
