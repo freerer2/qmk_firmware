@@ -10,7 +10,9 @@
 하지만 35키(charybdis nano) 또는 36키를 권장합니다.  
 C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하였습니다.
 
-작성자는 사무용으로 charybdis nano를 사용하고  
+작성자는  
+사무용으로 charybdis nano를 사용하고  
+가정용으로 skeletyl을 사용하며  
 휴대용으로 cantor-remix를 MX버전으로 개조하여 사용중입니다.  
 트랙볼의 기능은 charybdis의 기능을 사용하므로 charybdis nano만 지원합니다.  
 
