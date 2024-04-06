@@ -11,16 +11,30 @@
 C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하였습니다.
 
 작성자는  
-사무용으로 [__charybdis nano__](https://github.com/Bastardkb/Charybdis)를 사용하고  
-가정용으로 [__skeletyl__](https://github.com/Bastardkb/Skeletyl)을 사용하며  
-휴대용으로 [__cantor-remix__](https://github.com/nilokr/cantor-remix)를 MX버전으로 개조하여 사용중입니다.  
-트랙볼의 기능은 charybdis의 기능을 사용하므로 charybdis nano만 지원합니다.  
+사무용으로 [**Charybdis Nano**](https://github.com/Bastardkb/Charybdis)를 사용하고  
+가정용으로 [**Skeletyl**](https://github.com/Bastardkb/Skeletyl)을 사용하며  
+휴대용으로 [**cantor-remix**](https://github.com/nilokr/cantor-remix)를 MX버전으로 개조하여 사용중입니다.  
+트랙볼의 기능은 charybdis의 기능을 사용하므로 charybdis nano만 지원합니다.
 
 ## 주요기능
 
 레이어 변환, 콤보, 탭댄스(상세내용 작성예정)
 
-###
+### 콤보
+
+상세내용 작성예정
+
+### 홀드/탭
+
+상세내용 작성예정
+
+### 한손사용 레이어 변환
+
+상세내용 작성예정
+
+### 기타
+
+상세내용 작성예정
 
 # Keymap Image
 
@@ -36,3 +50,21 @@ C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하�
 <!-- ### qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones -e DOUBLE_B=yes -->
 
 ![keymap image](/users/lazybones/docs/freerer2.svg)
+
+# 준비중인 기능
+
+## 구상중인 기능
+
+-   양손 B키 삽입
+
+## 구현중인 기능
+
+-   없음
+
+## 구현된 기능
+
+-   없음
+
+## 삭제된 기능
+
+-   없음
