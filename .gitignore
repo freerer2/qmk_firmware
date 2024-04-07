@@ -80,7 +80,7 @@ tags
 *.gif
 *.jpg
 *.jpeg
-*.png
+#*.png
 *.apng
 *.mng
 *.webp
