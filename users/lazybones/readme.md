@@ -20,7 +20,7 @@ C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하�
 
 ## 링크
 > [레이어 소개](./docs/layers/layers.md)  
-> [슈킹 가이드](./docs/refs/refs.md)(작성중)  
+> ~~[슈킹 가이드](./docs/refs/refs.md)(작성중)~~ 귀찮아짐
 
 ## 컴파일예제
 

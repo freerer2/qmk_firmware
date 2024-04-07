@@ -35,7 +35,7 @@
 #endif // POINTING_DEVICE_ENABLE
 
 
-// 유저키코드 추가
+// 유저키코드 나열
 enum user_keycodes {
 	ECLIPSE,
 	BROWSER = SAFE_RANGE,
@@ -46,12 +46,9 @@ enum user_keycodes {
 	RESUME,
 };
 
-// 더블탭레이어 키코드 추가 
+// 더블탭 키코드 나열
 enum double_tab_keycodes {
     U_TD_BOOT,
     U_TD_SLSH_SCRL,
     U_TD_BTN2_SCRL,
-	#define LAYER_X(LAYER, STRING) U_TD_##LAYER,
-		LAYER_LIST
-	#undef LAYER_X
 };

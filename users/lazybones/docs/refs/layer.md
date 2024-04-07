@@ -1,29 +1,11 @@
-`lazybones.h`
--
-```h
-// 매핑 변수 레이어 레이아웃 대입
-#define MAPPING LAYOUT_lazybones
+# 레이어 정의
+레이어의 키코드를 수정하거나 레이어를 수정 하고 싶은 경우 참고하세요
 
-// 레이어 선언 매크로 함수
-#define U_LAYER_VA_ARGS(mapping, ...) mapping(__VA_ARGS__)
-```
----
+## 레이어 수정
+[keymap_layer_setting](../../keymap_helper/settings/keymap_layer_setting.h ) 파일에 레이어를 수정 하심됨
 
-`lazybones.c`
--
-```c
-// 레이어 목록 나열
-enum layers {
-	#define LAYER_X(LAYER, STRING) U_##LAYER,
-		LAYER_LIST
-	#undef LAYER_X
-};
-
-// 레이어 정의
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	#define LAYER_X(LAYER, STRING) [U_##LAYER] = U_LAYER_VA_ARGS(MAPPING, LAYER_##LAYER),
-		LAYER_LIST
-	#undef LAYER_X
-};
-```
----
+## 레이어 추가
+[keymap_layer_setting](../../keymap_helper/settings/keymap_layer_setting.h )  파일에 레이어를 추가한 뒤 마지막 LAYER_LIST에 사용할 레이어들을 나열 하심됨
+ 
+## 유저키코드 추가/수정
+[keymap_keycode_setting](../../keymap_helper/settings/keymap_keycode_setting.h) 파일에 키코드를 추가/수정 하심됨
