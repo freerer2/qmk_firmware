@@ -1,86 +1,15 @@
 ##https://keymap-drawer.streamlit.app/
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
-combos:
-  - {p: [11, 12], k: '한/영', l: [BASE]}
-  - {p: [17, 18], k: 'CAPS', l: [BASE]}
-  - {p: [21, 22], k: '_', l: [BASE]}
-  - {p: [31, 32], k: 'ESC', l: [BASE]}
-  - {p: [33, 34], k: 'DEL', l: [BASE]}
 layers:
-  BASE:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LCTL}
-  - {t: F, h: LSFT}
-  - G
-  - H
-  - {t: J, h: LSFT}
-  - {t: K, h: LCTL}
-  - {t: L, h: LALT}
-  - {t: '''', h: LGUI}
-  - {t: Z, h: MOUSE}
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - ','
-  - .
-  - {t: /, h: MOUSE}
-  - {t: ESC, h: DEBUG}
-  - {t: SPC, h: NAV}
-  - {t: TAB, h: FUN}
-  - {t: ENT, h: SYM}
-  - {t: BSPC, h: NUM}
-  - {t: DEL, type: ghost}
   NAV:
-  - TD(REBOOT)
-  - ''
-  - ''
-  - DF(BASE)
-  - ''
-  - INS
-  - HOME
-  - UP
-  - END
-  - PGUP
-  - LGUI
-  - LALT
-  - LCTL
-  - LSFT
-  - ''
-  - CAPS
-  - LEFT
-  - DOWN
-  - RGHT
-  - PGDN
-  - ''
-  - ALGR
-  - DF(NUM)
-  - DF(NAV)
-  - ''
-  - C(Y)
-  - C(V)
-  - C(C)
-  - C(X)
-  - C(Z)
-  - ''
-  - {type: held}
-  - ''
-  - ENT
-  - BSPC
-  - {t: DEL, type: ghost}
+  - [TD(REBOOT), '', '', DF(BASE) ,'']
+  - [INS, HOME, UP, END, PGUP]
+  - [LGUI, LALT, LCTL, LSFT, '']
+  - [CAPS, LEFT, DOWN, RGHT, PGDN]
+  - ['', ALGR, DF(NUM), DF(NAV), '']
+  - [REDO, PASTE, COPY, CUT, UNDO]
+  - ['', {type: held}, '']
+  - [ENT, BSPC, {t: DEL, type: ghost}]
   NUM:
   - '['
   - '7'

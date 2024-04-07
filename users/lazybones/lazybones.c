@@ -1,6 +1,25 @@
 #include QMK_KEYBOARD_H
 #include "lazybones.h"
 
+// 콤보 목록 나열
+enum combos {
+	#define COMBO_X(NAME, WORK_KEY, ...) NAME,
+		COMBO_LIST
+	#undef COMBO_X
+};
+
+// 콤보 키 배열 정의
+#define COMBO_X(NAME, WORK_KEY, ...) const uint16_t PROGMEM COMBO_##NAME[] = {__VA_ARGS__, COMBO_END};
+	COMBO_LIST
+#undef COMBO_X
+
+// 콤보 동작키 매핑
+combo_t key_combos[] = {
+	#define COMBO_X(NAME, WORK_KEY, ...) [NAME] = COMBO(uint16_t PROGMEM COMBO_##NAME, WORK_KEY),
+		COMBO_LIST
+	#undef COMBO_X
+};
+
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,
@@ -29,12 +48,6 @@ enum my_keycodes {
 	RESUME,
 };
 
-// 콤보추가
-enum combos {
-	#define COMBO_X(NAME, COMBOS, ...) NAME,
-		COMBO_LIST
-	#undef COMBO_X
-};
 
 // 오버라이드 추가
 enum shifts {
@@ -172,17 +185,6 @@ tap_dance_action_t tap_dance_actions[] = {
 	#define LAYER_X(LAYER, STRING) [U_TD_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_##LAYER),
 	LAYER_LIST
 	#undef LAYER_X
-};
-
-// 콤보
-#define COMBO_X(NAME, COMBOS, ...) const uint16_t PROGMEM COMBO_##NAME[] = {__VA_ARGS__, COMBO_END};
-	COMBO_LIST
-#undef COMBO_X
-
-combo_t key_combos[] = {
-#define COMBO_X(NAME, COMBOS, ...) [NAME] = COMBO(COMBO_##NAME, COMBOS),
-	COMBO_LIST
-#undef COMBO_X
 };
 
 //오버라이드

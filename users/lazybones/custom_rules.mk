@@ -1,1 +1,1 @@
-NO_SUSPEND_POWER_DOWN = yes
+NO_SUSPEND_POWER_DOWN = yes #QMK 20205번 이슈 내용 참고(https://github.com/qmk/qmk_firmware/pull/20205)

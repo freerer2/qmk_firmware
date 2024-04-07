@@ -1,0 +1,11 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  SYM:
+  - ['{', '&', '*', (, '}']
+  - ['', DF(BASE), '', '', TD(REBOOT)]
+  - [':', $, '%', ^, +]
+  - ['', LSFT, LCTL, LALT, LGUI]
+  - ['~', '!', '@', '#', '|']
+  - ['', DF(SYM), DF(FUN), ALGR, '']
+  - [(, ), _]
+  - [{type: held}, '', {type: ghost}]

@@ -39,6 +39,7 @@
 
 #define MAPPING LAYOUT_lazybones
 
+//콤보 정의(이름, 작동키, 콤보키)
 #define COMBO_LIST \
 COMBO_X(left_thumb,		KC_ESC,		LT(U_NAV,KC_SPC),	LT(U_FUN,KC_TAB)) \
 COMBO_X(mouse_thumb,	KC_BTN3,	KC_BTN1,			KC_BTN2) \
@@ -154,5 +155,5 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			KC_MS_L,			KC_MS_D,			KC_MS_R,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
-											KC_BTN3,			KC_BTN1,			TD(U_TD_BTN2_SCRL),	KC_BTN2,			KC_BTN1,			KC_BTN3
+											KC_BTN3,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE

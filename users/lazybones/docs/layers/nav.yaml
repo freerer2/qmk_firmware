@@ -1,0 +1,11 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  NAV:
+  - [TD(REBOOT), '', '', DF(BASE) ,'']
+  - [INS, HOME, UP, END, PGUP]
+  - [LGUI, LALT, LCTL, LSFT, '']
+  - [CAPS, LEFT, DOWN, RGHT, PGDN]
+  - ['', ALGR, DF(NUM), DF(NAV), '']
+  - [REDO, PASTE, COPY, CUT, UNDO]
+  - ['', {type: held}, '']
+  - [ENT, BSPC, {t: DEL, type: ghost}]
