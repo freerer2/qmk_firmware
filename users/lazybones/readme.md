@@ -10,6 +10,8 @@
 하지만 35키(charybdis nano) 또는 36키를 권장합니다.  
 C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하였습니다.
 
+굳이 C언어를 배울 생각은 없습니다. 소스 구조가 엉망이라도 이해해주세요. 물론 C언어 팁은 환영입니다.
+
 작성자는  
 사무용으로 [**Charybdis Nano**](https://github.com/Bastardkb/Charybdis)를 사용하고  
 가정용으로 [**Skeletyl**](https://github.com/Bastardkb/Skeletyl)을 사용하며  
