@@ -1,11 +1,11 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   MOUSE(POINTING_DEVICE):
-  - [C(Z), C(W), C(E), C(S(R)), C(Y)]
+  - [UNDO, C(W), C(E), C(S(R)), REDO]
   - [DPI_MOD, WINFLT, WINUP, WINFRT, S_D_MOD]
   - [LGUI, LALT, LCTL, LSFT, C(H)]
   - [LEFT DESK, WINLT, WINDN, WINRT, RIGHT DESK]
-  - [{type: held}, C(X), C(C), C(V), '']
+  - [{type: held}, CUT, COPY, PASTE, '']
   - [NEW DESK, KC_BTN4, KC_BTN5, SNIPING, {t: DEL DESK, type: held}]
   - ['KC_BTN3', 'KC_BTN1', {t: KC_BTN2, h: SCROLL}]
   - ['KC_BTN2', 'KC_BTN1', {t: KC_BTN3, type: ghost}]
