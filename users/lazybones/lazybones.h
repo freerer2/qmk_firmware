@@ -60,6 +60,7 @@ LAYER_X(DEBUG,	"Debug")
 
 #if defined (DOUBLE_B)
 
+	//오버라이드 조합키 정의(이름, 조합할 모드키, 조합할 키코드, 작동 키코드)
 	#define OVERRIDE_LIST \
 	OVERRIDE_X(WINLT,	MOD_MASK_SHIFT, 	U_WINLT, 	U_WINFLT) \
 	OVERRIDE_X(WINUP,	MOD_MASK_SHIFT, 	U_WINUP, 	U_WINFUP) \
@@ -95,6 +96,7 @@ LAYER_X(DEBUG,	"Debug")
 											KC_TILD,			KC_RPRN,			KC_UNDS,			KC_NO,				KC_NO,				KC_NO
 #else
 
+	//오버라이드 조합키 정의(이름, 조합할 모드키, 조합할 키코드, 작동 키코드)
 	#define OVERRIDE_LIST \
 	OVERRIDE_X(WINLT,	MOD_MASK_SHIFT, 	U_WINLT, 	U_WINFLT) \
 	OVERRIDE_X(WINUP,	MOD_MASK_SHIFT, 	U_WINUP, 	U_WINFUP) \

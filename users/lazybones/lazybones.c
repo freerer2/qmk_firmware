@@ -20,6 +20,27 @@ combo_t key_combos[] = {
 	#undef COMBO_X
 };
 
+// 오버라이드 목록 나열
+enum overrides {
+	#define OVERRIDE_X(NAME, MOD, ORI, CHG) NAME,
+		OVERRIDE_LIST
+	#undef OVERRIDE_X
+};
+
+// 오버라이드 동작 정의
+#define OVERRIDE_X(NAME, MOD, ORI, CHG) const key_override_t OVERRIDE_##NAME = ko_make_basic(MOD, ORI, CHG);
+	OVERRIDE_LIST
+#undef OVERRIDE_X
+
+// 오버라이드 전역 정의
+const key_override_t **key_overrides = (const key_override_t *[]){
+	#define OVERRIDE_X(NAME, MOD, ORI, CHG) &OVERRIDE_##NAME,
+		OVERRIDE_LIST
+	#undef OVERRIDE_X
+	NULL
+};
+
+
 typedef enum {
     TD_NONE,
     TD_UNKNOWN,
@@ -46,14 +67,6 @@ enum my_keycodes {
 	STEP_OVER,
 	STEP_OUT,
 	RESUME,
-};
-
-
-// 오버라이드 추가
-enum shifts {
-	#define OVERRIDE_X(NAME, MOD, ORI, CHG) NAME,
-		OVERRIDE_LIST
-	#undef OVERRIDE_X
 };
 
 // 레이어추가
@@ -185,18 +198,6 @@ tap_dance_action_t tap_dance_actions[] = {
 	#define LAYER_X(LAYER, STRING) [U_TD_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_##LAYER),
 	LAYER_LIST
 	#undef LAYER_X
-};
-
-//오버라이드
-#define OVERRIDE_X(NAME, MOD, ORI, CHG) const key_override_t OVERRIDE_##NAME = ko_make_basic(MOD, ORI, CHG);
-	OVERRIDE_LIST
-#undef OVERRIDE_X
-
-const key_override_t **key_overrides = (const key_override_t *[]){
-#define OVERRIDE_X(NAME, MOD, ORI, CHG) &OVERRIDE_##NAME,
-	OVERRIDE_LIST
-#undef OVERRIDE_X
-NULL
 };
 
 //유저키코드
