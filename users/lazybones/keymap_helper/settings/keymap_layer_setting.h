@@ -13,13 +13,13 @@
 	#define LAYER_NUM \
 	KC_LBRC,			KC_7,				KC_8,				KC_9,				KC_RBRC,			KC_NO,				DF(U_BASE),			KC_NO,				KC_NO,				TD(U_TD_BOOT),		\
 	KC_SCLN,			KC_4,				KC_5,				KC_6,				KC_PLUS,			KC_NO,				KC_LSFT,			KC_LCTL,			KC_LALT,			KC_LGUI,			\
-	KC_SLSH,			KC_1,				KC_2,				KC_3,				KC_BSLS,			KC_NO,				DF(U_NUM),			DF(U_NAV),			KC_ALGR,			KC_NO,				\
+	KC_SLSH,			KC_1,				KC_2,				KC_3,				KC_BSLS,			KC_NO,				DF(U_NUM),			DF(U_NAV),			KC_ALGR,			KC_RCTL,			\
 											KC_GRV,				KC_0,				KC_MINS,			KC_NO,				KC_NO,				KC_NO
 
 	#define LAYER_SYM \
 	KC_LCBR,			KC_AMPR,			KC_ASTR,			KC_LPRN,			KC_RCBR,			KC_NO,				DF(U_BASE),			KC_NO,				KC_NO,				TD(U_TD_BOOT),		\
 	KC_COLN,			KC_DLR,				KC_PERC,			KC_CIRC,			KC_EQL,				KC_NO,				KC_LSFT,			KC_LCTL,			KC_LALT,			KC_LGUI,			\
-	KC_QUES,			KC_EXLM,			KC_AT,				KC_HASH,			KC_PIPE,			KC_NO,				DF(U_SYM),			DF(U_FUN),			KC_ALGR,			KC_NO,				\
+	KC_QUES,			KC_EXLM,			KC_AT,				KC_HASH,			KC_PIPE,			KC_NO,				DF(U_SYM),			DF(U_FUN),			KC_ALGR,			KC_RCTL,			\
 											KC_TILD,			KC_RPRN,			KC_UNDS,			KC_NO,				KC_NO,				KC_NO
 #else
 
@@ -32,13 +32,13 @@
 	#define LAYER_NUM \
 	KC_LBRC,			KC_7,				KC_8,				KC_9,				KC_RBRC,			KC_NO,				DF(U_BASE),			KC_NO,				KC_NO,				TD(U_TD_BOOT),		\
 	KC_SCLN,			KC_4,				KC_5,				KC_6,				KC_EQL,				KC_NO,				KC_LSFT,			KC_LCTL,			KC_LALT,			KC_LGUI,			\
-	KC_GRV,				KC_1,				KC_2,				KC_3,				KC_BSLS,			KC_NO,				DF(U_NUM),			DF(U_NAV),			KC_ALGR,			KC_NO,				\
+	KC_GRV,				KC_1,				KC_2,				KC_3,				KC_BSLS,			KC_NO,				DF(U_NUM),			DF(U_NAV),			KC_ALGR,			KC_RCTL,			\
 											KC_DOT,				KC_0,				KC_MINS,			KC_NO,				KC_NO,				KC_NO
 
 	#define LAYER_SYM \
 	KC_LCBR,			KC_AMPR,			KC_ASTR,			KC_LPRN,			KC_RCBR,			KC_NO,				DF(U_BASE),			KC_NO,				KC_NO,				TD(U_TD_BOOT),		\
 	KC_COLN,			KC_DLR,				KC_PERC,			KC_CIRC,			KC_PLUS,			KC_NO,				KC_LSFT,			KC_LCTL,			KC_LALT,			KC_LGUI,			\
-	KC_TILD,			KC_EXLM,			KC_AT,				KC_HASH,			KC_PIPE,			KC_NO,				DF(U_SYM),			DF(U_FUN),			KC_ALGR,			KC_NO,				\
+	KC_TILD,			KC_EXLM,			KC_AT,				KC_HASH,			KC_PIPE,			KC_NO,				DF(U_SYM),			DF(U_FUN),			KC_ALGR,			KC_RCTL,			\
 											KC_LPRN,			KC_RPRN,			KC_UNDS,			KC_NO,				KC_NO,				KC_NO
 
 
@@ -47,13 +47,13 @@
 #define LAYER_NAV \
 TD(U_TD_BOOT),		KC_NO,				KC_NO,				DF(U_BASE),			KC_NO,				KC_INS,				KC_HOME,			KC_UP,				KC_END,				KC_PGUP,			\
 KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			KC_NO,				KC_CAPS,			KC_LEFT,			KC_DOWN,			KC_RGHT,			KC_PGDN,			\
-KC_NO,				KC_ALGR,			DF(U_NUM),			DF(U_NAV),			KC_NO,				U_RDO,				U_PST,				U_CPY,				U_CUT,				U_UND,				\
+KC_RCTL,			KC_ALGR,			DF(U_NUM),			DF(U_NAV),			KC_NO,				U_RDO,				U_PST,				U_CPY,				U_CUT,				U_UND,				\
 										KC_NO,				KC_NO,				KC_NO,				KC_ENT,				KC_BSPC,			KC_DEL
 
 #define LAYER_FUN \
 TD(U_TD_BOOT),		KC_NO,				KC_NO,				DF(U_BASE),			KC_NO,				KC_PSCR,			KC_F7,				KC_F8,				KC_F9,				KC_F12,				\
 KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			KC_NO,				KC_SCRL,			KC_F4,				KC_F5,				KC_F6,				KC_F11,				\
-KC_NO,				KC_ALGR,			DF(U_SYM),			DF(U_FUN),			KC_NO,				KC_PAUS,			KC_F1,				KC_F2,				KC_F3,				KC_F10,				\
+KC_RCTL,			KC_ALGR,			DF(U_SYM),			DF(U_FUN),			KC_NO,				KC_PAUS,			KC_F1,				KC_F2,				KC_F3,				KC_F10,				\
 										KC_NO,				KC_NO,				KC_NO,				KC_ENT,				KC_BSPC,			KC_APP
 
 #define LAYER_DEBUG \
