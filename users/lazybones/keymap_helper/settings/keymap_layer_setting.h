@@ -73,7 +73,7 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
 	KC_LGUI,			KC_LALT,			KC_LCTL,			KC_LSFT,			C(KC_H),			U_LFT_DSKT,			KC_MS_L,			KC_MS_D,			KC_MS_R,			U_RGT_DSKT,			\
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
-											KC_BTN3,			KC_BTN1,			KC_BTN2,			KC_BTN2,			KC_BTN1,			KC_BTN3
+											KC_BTN3,			KC_BTN1,			LSFT_T(KC_BTN2),	LSFT_T(KC_BTN2),	KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE
 
 // 레이어 정의
