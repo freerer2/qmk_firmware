@@ -25,13 +25,19 @@ C언어를 써본 적이 없으므로 코드의 패턴은 miryoku를 참고하�
 ## 컴파일예제
 
 ### Skeletyl
-> qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones
+```bash
+qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones
+```
 
 ### Charybdis Nano
-> qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones
+```bash
+qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones
+```
 
 ### Cator
-> qmk compile -kb cantor -km lazybones
+```bash
+qmk compile -kb cantor -km lazybones
+```
 
 <!-- ### qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones -e DOUBLE_B=yes -->
 <!-- ### qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones -e DOUBLE_B=yes -->
