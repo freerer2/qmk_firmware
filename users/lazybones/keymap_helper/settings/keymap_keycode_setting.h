@@ -34,7 +34,6 @@
 #	endif // !NO_CHARYBDIS_KEYCODES
 #endif // POINTING_DEVICE_ENABLE
 
-
 // 유저키코드 나열
 enum user_keycodes {
 	ECLIPSE,
