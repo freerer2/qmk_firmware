@@ -204,7 +204,7 @@ void matrix_scan_user(void) {
 //탭 시간간격
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-		case TD(U_TD_BTN2_SCRL): case TD(U_TD_SLSH_SCRL):
+		case TD(U_TD_BTN2_SCRL): /*case TD(U_TD_SLSH_SCRL):*/
 			return TAPPING_TERM - 50;
 		case LCTL_T(KC_D): case LSFT_T(KC_F): 
 		case LSFT_T(KC_J): case LCTL_T(KC_K): 
