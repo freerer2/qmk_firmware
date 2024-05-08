@@ -55,7 +55,7 @@ qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones
 qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones
 ```
 
-### Cator
+### Cantor
 
 ```bash
 qmk compile -kb cantor -km lazybones
