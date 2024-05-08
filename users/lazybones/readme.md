@@ -13,7 +13,7 @@
   - [컴파일예제](#컴파일예제)
     - [Skeletyl](#skeletyl)
     - [Charybdis Nano](#charybdis-nano)
-    - [Cator](#cator)
+    - [Cantor](#cantor)
   - [준비중인 기능](#준비중인-기능)
     - [구상중인 기능](#구상중인-기능)
     - [구현중인 기능](#구현중인-기능)
