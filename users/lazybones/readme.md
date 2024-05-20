@@ -30,7 +30,7 @@
 사무용 : [**Charybdis Nano**](https://github.com/Bastardkb/Charybdis)  
 가정용 : [**Skeletyl**](https://github.com/Bastardkb/Skeletyl)  
 휴대용 : [**Lazyboy36**](https://github.com/freerer2/keyboard_build/tree/main/lazyboy36)  
-비상용 : [**Cantor-remix**](https://github.com/nilokr/cantor-remix)  
+비상용 : [**Cantor-remix**](https://github.com/nilokr/cantor-remix)(MX스위치 버전 개조판)  
 위 키보드 4개를 주력으로 사용중입니다. 
 
 키맵은 [**miryoku**](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku) 를 참고하였습니다.  
