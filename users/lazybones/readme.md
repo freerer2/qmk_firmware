@@ -13,6 +13,7 @@
   - [컴파일예제](#컴파일예제)
     - [Skeletyl](#skeletyl)
     - [Charybdis Nano](#charybdis-nano)
+    - [Lazyboy36](#lazyboy36)
     - [Cator](#cator)
   - [준비중인 기능](#준비중인-기능)
     - [구상중인 기능](#구상중인-기능)
@@ -26,9 +27,11 @@
 하지만 35키(charybdis nano) 또는 36키를 권장합니다.
 
 작성자는  
-사무용으로 [**Charybdis Nano**](https://github.com/Bastardkb/Charybdis)를 사용하고  
-가정용으로 [**Skeletyl**](https://github.com/Bastardkb/Skeletyl)을 사용하며  
-휴대용으로 [**Cantor-remix**](https://github.com/nilokr/cantor-remix)를 MX버전으로 개조하여 사용중입니다.
+사무용 : [**Charybdis Nano**](https://github.com/Bastardkb/Charybdis)  
+가정용 : [**Skeletyl**](https://github.com/Bastardkb/Skeletyl)  
+휴대용 : [**Lazyboy36**](https://github.com/freerer2/keyboard_build/tree/main/lazyboy36)  
+비상용 : [**Cantor-remix**](https://github.com/nilokr/cantor-remix)  
+위 키보드 4개를 주력으로 사용중입니다. 
 
 키맵은 [**miryoku**](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku) 를 참고하였습니다.  
 또한 C언어를 써본 적이 없으므로 코드의 패턴도 [**miryoku**](https://github.com/manna-harbour/miryoku_qmk/tree/miryoku/users/manna-harbour_miryoku)를 참고하였습니다.  
@@ -53,6 +56,12 @@ qmk compile -kb bastardkb/skeletyl/blackpill -km lazybones
 
 ```bash
 qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones
+```
+
+### Lazyboy36
+
+```bash
+qmk compile -kb lazyboy36/rp2040 -km lazybones
 ```
 
 ### Cator
