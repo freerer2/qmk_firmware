@@ -6,6 +6,6 @@ layers:
   - [;, '4', '5', '6', '=']
   - ['', LSFT, LCTL, LALT, LGUI]
   - ['`', '1', '2', '3', \]
-  - ['', DF(NUM), DF(NAV), ALGR, '']
+  - ['', DF(NUM), DF(NAV), ALGR, RCTL]
   - [., '0', '-']
   - ['', {type: held}, {type: ghost}]

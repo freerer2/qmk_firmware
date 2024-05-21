@@ -6,6 +6,6 @@ layers:
   - [':', $, '%', ^, +]
   - ['', LSFT, LCTL, LALT, LGUI]
   - ['~', '!', '@', '#', '|']
-  - ['', DF(SYM), DF(FUN), ALGR, '']
+  - ['', DF(SYM), DF(FUN), ALGR, RCTL]
   - [(, ), _]
   - [{type: held}, '', {type: ghost}]

@@ -7,5 +7,5 @@ layers:
   - [LEFT DESK, MS_LEFT, MS_DOWN, MS_RIGHT, RIGHT DESK]
   - [{type: held}, CUT, COPY, PASTE, '']
   - [NEW DESK, KC_BTN4, KC_BTN5, '', {t: DEL DESK, type: held}]
-  - ['KC_BTN2', 'KC_BTN1', KC_BTN3]
-  - ['KC_BTN3', 'KC_BTN1', KC_BTN2]
+  - ['KC_BTN3', 'KC_BTN1', {t: KC_BTN2, h: SHIFT}]
+  - [{t: KC_BTN2, h: SHIFT}, 'KC_BTN1', KC_BTN3]

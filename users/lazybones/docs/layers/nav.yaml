@@ -5,7 +5,7 @@ layers:
   - [INS, HOME, UP, END, PGUP]
   - [LGUI, LALT, LCTL, LSFT, '']
   - [CAPS, LEFT, DOWN, RGHT, PGDN]
-  - ['', ALGR, DF(NUM), DF(NAV), '']
+  - [RCTL, ALGR, DF(NUM), DF(NAV), '']
   - [REDO, PASTE, COPY, CUT, UNDO]
   - ['', {type: held}, '']
   - [ENT, BSPC, {t: DEL, type: ghost}]

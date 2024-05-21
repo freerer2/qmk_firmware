@@ -1,3 +1,4 @@
+##https://keymap-drawer.streamlit.app/
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 combos:
   - {p: [11, 12], k: '한/영', l: [BASE]}
