@@ -14,7 +14,7 @@
     - [Skeletyl](#skeletyl)
     - [Charybdis Nano](#charybdis-nano)
     - [Lazyboy36](#lazyboy36)
-    - [Cator](#cator)
+    - [Cantor](#cantor)
   - [준비중인 기능](#준비중인-기능)
     - [구상중인 기능](#구상중인-기능)
     - [구현중인 기능](#구현중인-기능)
@@ -64,7 +64,7 @@ qmk compile -kb bastardkb/charybdis/3x5/blackpill -km lazybones
 qmk compile -kb lazyboy36/rp2040 -km lazybones
 ```
 
-### Cator
+### Cantor
 
 ```bash
 qmk compile -kb cantor -km lazybones
@@ -89,6 +89,9 @@ qmk compile -kb cantor -km lazybones
 
 ### 구현된 기능
 
+-   2024-06-17 :  
+    우측 슬래시 hold = 마우스레이어를  
+    우측 슬래시 hold = 스크롤레이어로 변경(스크롤 레이어 신규 작성) 및 gui+숫자 버튼 추가
 -   콤보 추가를 매크로로 할 수 있게 했습니다.  
     디시인사이드 스플릿 키보드 갤러리에서 우연히 [이글](https://gall.dcinside.com/mini/board/view/?id=splitkeeb&no=1507)을 보고 구현하였습니다.  
     덕분에 미료쿠의 레이어가 매크로라는 기능으로 정의 된다는 것을 깨달았습니다.
@@ -98,6 +101,7 @@ qmk compile -kb cantor -km lazybones
 ### 수정/삭제된 기능
 
 -   2024-04-08 : `Shift + Space` 조합 포기 `KC_ALGR`, `KC_RCTL` 사용
--   2024-04-05 : 기존 미료쿠의 레이어 더블탭 기능을 삭제하였습니다.  
+-   2024-04-05 :  
+    기존 미료쿠의 레이어 더블탭 기능을 삭제하였습니다.  
     DF()로 수정하였습니다. 잘못 누르는 경우 좀 빡치겠지만, 한손으로 뭐 하는데 두번 씩 누르면 킹받잖아요.
 -   기존 미료쿠에서 무언가 많이 바뀌었습니다.

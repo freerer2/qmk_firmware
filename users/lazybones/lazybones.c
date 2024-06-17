@@ -18,7 +18,7 @@ void u_td_fn_slsh_finish(tap_dance_state_t *state, void *user_data) {
 			#ifdef POINTING_DEVICE_ENABLE
 				charybdis_set_pointer_dragscroll_enabled(true);
 			#endif
-			layer_on(U_MOUSE);
+			layer_on(U_SCROL);
 			break;
 		case TD_DOUBLE_TAP:
 			tap_code(KC_SLSH);
@@ -37,7 +37,7 @@ void u_td_fn_slsh_reset(tap_dance_state_t *state, void *user_data) {
 			#ifdef POINTING_DEVICE_ENABLE
 				charybdis_set_pointer_dragscroll_enabled(false);
 			#endif
-			layer_off(U_MOUSE);
+			layer_off(U_SCROL);
 			break;
 		case TD_DOUBLE_TAP:
 		default:
