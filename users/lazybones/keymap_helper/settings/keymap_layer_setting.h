@@ -69,10 +69,10 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			SNIPING,			U_DEL_DSKT,			\
 											KC_BTN3,			KC_BTN1,			TD(U_TD_BTN2_SCRL),	KC_BTN2,			KC_BTN1,			KC_BTN3
 	#define LAYER_SCROL \
-	KC_NO,				G(KC_7),			G(KC_8),            G(KC_9),		    KC_NO,				KC_NO,			    KC_NO,		    	KC_NO,			    KC_NO,			    KC_NO,			    \
-	KC_NO,              G(KC_4),            G(KC_5),            G(KC_6),		    KC_NO,			    KC_NO,		    	KC_NO,		    	KC_NO,			    KC_NO,              KC_NO,			    \
-	KC_NO,				G(KC_1),	        G(KC_2),            G(KC_3),            KC_NO,				KC_NO,		    	KC_NO,		    	KC_NO,			    KC_NO,			    KC_NO,			    \
-											KC_NO,			    G(KC_0),            KC_NO,              KC_NO,		    	KC_NO,			    KC_NO
+	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+											KC_NO,				G(KC_0),			KC_NO,				KC_BTN2,			KC_BTN1,			KC_BTN3
 #else
 	#define LAYER_MOUSE \
 	U_UND,				C(KC_W),			C(KC_E),			C(S(KC_R)),			U_RDO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
@@ -80,10 +80,10 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
 											KC_BTN3,			KC_BTN1,			LSFT_T(KC_BTN2),	LSFT_T(KC_BTN2),	KC_BTN1,			KC_BTN3
 	#define LAYER_SCROL \
-	KC_NO,				G(KC_7),			G(KC_8),            G(KC_9),		    KC_NO,				KC_NO,			    KC_NO,		    	KC_NO,			    KC_NO,			    KC_NO,			    \
-	KC_NO,              G(KC_4),            G(KC_5),            G(KC_6),		    KC_NO,			    KC_NO,		    	KC_NO,		    	KC_NO,			    KC_NO,              KC_NO,			    \
-	KC_NO,				G(KC_1),	        G(KC_2),            G(KC_3),            KC_NO,				KC_NO,		    	KC_NO,		    	KC_NO,			    KC_NO,			    KC_NO,			    \
-											KC_NO,			    G(KC_0),            KC_NO,              KC_NO,		    	KC_NO,			    KC_NO
+	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+											KC_NO,				G(KC_0),			KC_NO,				KC_BTN2,			KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE
 
 // 레이어 정의
