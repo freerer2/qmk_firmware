@@ -71,7 +71,7 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	#define LAYER_SCROL \
 	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
 	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
-	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_BTN4,			KC_BTN5,			SNIPING,			KC_NO,				\
 											KC_NO,				G(KC_0),			KC_NO,				KC_BTN2,			KC_BTN1,			KC_BTN3
 #else
 	#define LAYER_MOUSE \
@@ -82,7 +82,7 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	#define LAYER_SCROL \
 	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
 	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
-	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_BTN4,			KC_BTN5,			KC_NO,				KC_NO,				\
 											KC_NO,				G(KC_0),			KC_NO,				KC_BTN2,			KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE
 
