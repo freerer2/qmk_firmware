@@ -80,9 +80,9 @@ KC_NO,				ECLIPSE,			BROWSER,			NEXACRO,			KC_NO,				KC_NO,				KC_NO,				KC_NO,	
 	KC_NO,				U_CUT,				U_CPY,				U_PST,				KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
 											KC_BTN3,			KC_BTN1,			LSFT_T(KC_BTN2),	LSFT_T(KC_BTN2),	KC_BTN1,			KC_BTN3
 	#define LAYER_SCROL \
-	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
-	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				KC_NO,				\
-	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				KC_NO,				KC_BTN4,			KC_BTN5,			KC_NO,				KC_NO,				\
+	KC_NO,				G(KC_7),			G(KC_8),			G(KC_9),			KC_NO,				KC_NO,				U_WINFLT,			KC_MS_U,			U_WINFRT,			KC_NO,				\
+	KC_NO,				G(KC_4),			G(KC_5),			G(KC_6),			KC_NO,				U_LFT_DSKT,			KC_MS_L,			KC_MS_D,			KC_MS_R,			U_RGT_DSKT,			\
+	KC_NO,				G(KC_1),			G(KC_2),			G(KC_3),			KC_NO,				U_NEW_DSKT,			KC_BTN4,			KC_BTN5,			KC_NO,				U_DEL_DSKT,			\
 											KC_NO,				G(KC_0),			KC_NO,				KC_BTN2,			KC_BTN1,			KC_BTN3
 #endif // POINTING_DEVICE_ENABLE
 
