@@ -102,52 +102,51 @@ static bool is_nexaro = false;
 // 유저키코드 처리
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
-	case A_A_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.25);}return false;
-	case A_B_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.25);}return false;
-	case A_C_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.25);}return false;
-	case A_D_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.25);}return false;
-	case A_E_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.25);}return false;
-	case A_A_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.5);}return false;
-	case A_B_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.5);}return false;
-	case A_C_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.5);}return false;
-	case A_D_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.5);}return false;
-	case A_E_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.5);}return false;
-	case A_A_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.75);}return false;
-	case A_B_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.75);}return false;
-	case A_C_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.75);}return false;
-	case A_D_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.75);}return false;
-	case A_E_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.75);}return false;
-	
-	case B_A_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.09, 0.25);}return false;
-	case B_A_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.09, 0.5);}return false;
-	case B_A_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.09, 0.75);}return false;
-	case B_B_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.18, 0.25);}return false;
-	case B_B_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.18, 0.5);}return false;
-	case B_B_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.18, 0.75);}return false;
-	case B_C_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0, 0.25);}return false;
-	case B_C_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0, 0.5);}return false;
-	case B_C_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0, 0.75);}return false;
-	case B_D_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.36, 0.25);}return false;
-	case B_D_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.36, 0.5);}return false;
-	case B_D_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.36, 0.75);}return false;
-	case B_E_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.45, 0.25);}return false;
-	case B_E_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.45, 0.5);}return false;
-	case B_E_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.45, 0.75);}return false;
-	case B_F_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.54, 0.25);}return false;
-	case B_F_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.54, 0.5);}return false;
-	case B_F_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.54, 0.75);}return false;
-	case B_G_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.63, 0.25);}return false;
-	case B_G_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.63, 0.5);}return false;
-	case B_G_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.63, 0.75);}return false;
-	case B_H_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.72, 0.25);}return false;
-	case B_H_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.72, 0.5);}return false;
-	case B_H_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.72, 0.75);}return false;
-	case B_I_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.81, 0.25);}return false;
-	case B_I_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.81, 0.5);}return false;
-	case B_I_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.81, 0.75);}return false;
-	case B_J_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.9, 0.25);}return false;
-	case B_J_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.9, 0.5);}return false;
-	case B_J_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.9, 0.75);}return false;
+	case A_A_A: if(record->event.pressed){digitizer_set_position(0.16, 0.25);}return false;
+	case A_B_A: if(record->event.pressed){digitizer_set_position(0.33, 0.25);}return false;
+	case A_C_A: if(record->event.pressed){digitizer_set_position(0.5, 0.25);}return false;
+	case A_D_A: if(record->event.pressed){digitizer_set_position(0.66, 0.25);}return false;
+	case A_E_A: if(record->event.pressed){digitizer_set_position(0.83, 0.25);}return false;
+	case A_A_B: if(record->event.pressed){digitizer_set_position(0.16, 0.5);}return false;
+	case A_B_B: if(record->event.pressed){digitizer_set_position(0.33, 0.5);}return false;
+	case A_C_B: if(record->event.pressed){digitizer_set_position(0.5, 0.5);}return false;
+	case A_D_B: if(record->event.pressed){digitizer_set_position(0.66, 0.5);}return false;
+	case A_E_B: if(record->event.pressed){digitizer_set_position(0.83, 0.5);}return false;
+	case A_A_C: if(record->event.pressed){digitizer_set_position(0.16, 0.75);}return false;
+	case A_B_C: if(record->event.pressed){digitizer_set_position(0.33, 0.75);}return false;
+	case A_C_C: if(record->event.pressed){digitizer_set_position(0.5, 0.75);}return false;
+	case A_D_C: if(record->event.pressed){digitizer_set_position(0.66, 0.75);}return false;
+	case A_E_C: if(record->event.pressed){digitizer_set_position(0.83, 0.75);}return false;
+	case B_A_A: if(record->event.pressed){digitizer_set_position(0.09, 0.25);}return false;
+	case B_A_B: if(record->event.pressed){digitizer_set_position(0.09, 0.5);}return false;
+	case B_A_C: if(record->event.pressed){digitizer_set_position(0.09, 0.75);}return false;
+	case B_B_A: if(record->event.pressed){digitizer_set_position(0.18, 0.25);}return false;
+	case B_B_B: if(record->event.pressed){digitizer_set_position(0.18, 0.5);}return false;
+	case B_B_C: if(record->event.pressed){digitizer_set_position(0.18, 0.75);}return false;
+	case B_C_A: if(record->event.pressed){digitizer_set_position(0.27, 0.25);}return false;
+	case B_C_B: if(record->event.pressed){digitizer_set_position(0.27, 0.5);}return false;
+	case B_C_C: if(record->event.pressed){digitizer_set_position(0.27, 0.75);}return false;
+	case B_D_A: if(record->event.pressed){digitizer_set_position(0.36, 0.25);}return false;
+	case B_D_B: if(record->event.pressed){digitizer_set_position(0.36, 0.5);}return false;
+	case B_D_C: if(record->event.pressed){digitizer_set_position(0.36, 0.75);}return false;
+	case B_E_A: if(record->event.pressed){digitizer_set_position(0.45, 0.25);}return false;
+	case B_E_B: if(record->event.pressed){digitizer_set_position(0.45, 0.5);}return false;
+	case B_E_C: if(record->event.pressed){digitizer_set_position(0.45, 0.75);}return false;
+	case B_F_A: if(record->event.pressed){digitizer_set_position(0.54, 0.25);}return false;
+	case B_F_B: if(record->event.pressed){digitizer_set_position(0.54, 0.5);}return false;
+	case B_F_C: if(record->event.pressed){digitizer_set_position(0.54, 0.75);}return false;
+	case B_G_A: if(record->event.pressed){digitizer_set_position(0.63, 0.25);}return false;
+	case B_G_B: if(record->event.pressed){digitizer_set_position(0.63, 0.5);}return false;
+	case B_G_C: if(record->event.pressed){digitizer_set_position(0.63, 0.75);}return false;
+	case B_H_A: if(record->event.pressed){digitizer_set_position(0.72, 0.25);}return false;
+	case B_H_B: if(record->event.pressed){digitizer_set_position(0.72, 0.5);}return false;
+	case B_H_C: if(record->event.pressed){digitizer_set_position(0.72, 0.75);}return false;
+	case B_I_A: if(record->event.pressed){digitizer_set_position(0.81, 0.25);}return false;
+	case B_I_B: if(record->event.pressed){digitizer_set_position(0.81, 0.5);}return false;
+	case B_I_C: if(record->event.pressed){digitizer_set_position(0.81, 0.75);}return false;
+	case B_J_A: if(record->event.pressed){digitizer_set_position(0.9, 0.25);}return false;
+	case B_J_B: if(record->event.pressed){digitizer_set_position(0.9, 0.5);}return false;
+	case B_J_C: if(record->event.pressed){digitizer_set_position(0.9, 0.75);}return false;
 
 	case ECLIPSE:
 		if (record->event.pressed) {
@@ -261,4 +260,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         default:
             return TAPPING_TERM;
     }
+}
+
+void keyboard_pre_init_user(void) {
+  // Call the keyboard pre init code.
+	digitizer_in_range_on();
 }
