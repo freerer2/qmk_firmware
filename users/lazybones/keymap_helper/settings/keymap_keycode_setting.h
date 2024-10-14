@@ -43,11 +43,26 @@ enum user_keycodes {
 	STEP_OVER,
 	STEP_OUT,
 	RESUME,
+	A_A,
+	B_A,
+	C_A,
+	D_A,
+	E_A,
+	A_B,
+	B_B,
+	C_B,
+	D_B,
+	E_B,
+	A_C,
+	B_C,
+	C_C,
+	D_C,
+	E_C,
 };
 
 // 더블탭 키코드 나열
 enum double_tab_keycodes {
-    U_TD_BOOT,
-    U_TD_SLSH_SCRL,
-    U_TD_BTN2_SCRL,
+	U_TD_BOOT,
+	U_TD_SLSH_SCRL,
+	U_TD_BTN2_SCRL,
 };

@@ -101,8 +101,23 @@ static bool is_nexaro = false;
 
 // 유저키코드 처리
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-		
+	switch (keycode) {
+	case B_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.25);}return false;
+	case C_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.25);}return false;
+	case D_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.25);}return false;
+	case E_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.25);}return false;
+	case A_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.5);}return false;
+	case B_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.5);}return false;
+	case C_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.5);}return false;
+	case D_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.5);}return false;
+	case E_B: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.5);}return false;
+	case A_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.75);}return false;
+	case B_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.33, 0.75);}return false;
+	case C_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.5, 0.75);}return false;
+	case D_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.66, 0.75);}return false;
+	case E_C: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.83, 0.75);}return false;
+	case A_A: if(record->event.pressed){digitizer_in_range_on(); digitizer_set_position(0.16, 0.25);}return false;
+
 	case ECLIPSE:
 		if (record->event.pressed) {
 			is_eclipse = true;

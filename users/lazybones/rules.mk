@@ -6,6 +6,7 @@ CAPS_WORD_ENABLE = no #캡스워드 기능
 KEY_OVERRIDE_ENABLE = yes #키 오버라이드 기능
 COMBO_ENABLE = yes #콤보
 DYNAMIC_MACRO_ENABLE = yes #다이나믹 매크로
+DIGITIZER_ENABLE = yes
 
 CONSOLE_ENABLE = no #디버그용(단순 용량 줄이기)
 
